@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+
+/* Animasyonlar */
+@keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+  
+  .animate-slideOut {
+    animation: slideOut 0.3s ease-in forwards;
+  }
+
+  /* Basamaklı animasyon için delay sınıfları */
+.delay-0 { transition-delay: 0ms; }
+.delay-1 { transition-delay: 50ms; }
+.delay-2 { transition-delay: 100ms; }
+.delay-3 { transition-delay: 150ms; }
+.delay-4 { transition-delay: 200ms; }
+.delay-5 { transition-delay: 250ms; }
+
+/* Menü öğeleri için animasyon */
+.menu-item {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.menu-open .menu-item {
+    opacity: 1;
+    transform: translateX(0);
+  }
